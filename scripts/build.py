@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Build the download site.
 
-Reads .claude-plugin/marketplace.json, checks every skill, then writes into dist/:
+Reads .claude-plugin/marketplace.json and links.json (skills kept in other repos, linked
+but not copied), checks every skill, then writes into dist/:
 
   index.html, style.css      the static site
   skills.json                machine-readable catalogue
@@ -105,8 +106,45 @@ def card(s: dict) -> str:
       </article>"""
 
 
+def link_card(link: dict) -> str:
+    """A card for skills kept in someone else's repo. It links out and has no download."""
+    e = html.escape
+    return f"""
+      <article class="card" id="{e(link['id'])}">
+        <p class="tag">{e(link['category'])} · linked</p>
+        <h3>{e(link['name'])}</h3>
+        <p>{e(link['description'])}</p>
+        <p class="meta">By <a href="{e(link['author']['url'])}">{e(link['author']['name'])}</a> · {e(link['license'])}</p>
+        <p class="actions">
+          <a class="button" href="{e(link['url'])}">Open the repo</a>
+        </p>
+      </article>"""
+
+
+def check_link(link: dict) -> list[str]:
+    label = link.get("name") or link.get("url") or "a link"
+    missing = [k for k in ("name", "id", "description", "category", "license", "url") if not link.get(k)]
+    if not (link.get("author") or {}).get("name") or not (link.get("author") or {}).get("url"):
+        missing.append("author name and url")
+    if link.get("url") and not link["url"].startswith("https://"):
+        missing.append("an https url")
+    return [f"links.json, {label}: needs {m}" for m in missing]
+
+
+def cards(catalogue: list[dict], links: list[dict]) -> str:
+    """Skill cards in catalogue order. Each link goes after the last skill of its category."""
+    out = [[card(s)] for s in catalogue]
+    tail = []
+    for link in links:
+        same = [i for i, s in enumerate(catalogue) if s["category"] == link["category"]]
+        (out[same[-1]] if same else tail).append(link_card(link))
+    return "".join(c for group in out for c in group) + "".join(tail)
+
+
 def main() -> int:
     market = json.loads((ROOT / ".claude-plugin" / "marketplace.json").read_text(encoding="utf-8"))
+    links_file = ROOT / "links.json"
+    links = json.loads(links_file.read_text(encoding="utf-8"))["links"] if links_file.is_file() else []
     version = market["metadata"]["version"]
     singles = [p for p in market["plugins"] if len(p["skills"]) == 1]
 
@@ -119,6 +157,8 @@ def main() -> int:
     for d in sorted((ROOT / "skills").iterdir()):
         if d.is_dir() and f"./skills/{d.name}" not in listed:
             problems.append(f"{d.name}: in skills/ but not in marketplace.json")
+    for link in links:
+        problems += check_link(link)
     if problems:
         print("Build stopped:\n  " + "\n  ".join(problems), file=sys.stderr)
         return 1
@@ -152,7 +192,7 @@ def main() -> int:
                    for z in sorted(downloads.glob("*.zip")))
     (downloads / "SHA256SUMS").write_text(sums, encoding="utf-8", newline="\n")
     (DIST / "skills.json").write_text(
-        json.dumps({"version": version, "skills": catalogue}, indent=2) + "\n",
+        json.dumps({"version": version, "skills": catalogue, "links": links}, indent=2) + "\n",
         encoding="utf-8", newline="\n")
 
     page = (ROOT / "site" / "index.template.html").read_text(encoding="utf-8")
@@ -163,7 +203,7 @@ def main() -> int:
         "{{MARKETPLACE}}": html.escape(market["name"]),
         "{{REPO}}": REPO,
         "{{REPO_URL}}": REPO_URL,
-        "{{CARDS}}": "".join(card(s) for s in catalogue),
+        "{{CARDS}}": cards(catalogue, links),
     }.items():
         page = page.replace(key, value)
     (DIST / "index.html").write_text(page, encoding="utf-8", newline="\n")

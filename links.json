@@ -1,0 +1,13 @@
+{
+  "links": [
+    {
+      "name": "Claude Skills for Governance, Risk and Compliance",
+      "id": "grc-skills",
+      "description": "Compliance skills for frameworks such as ISO 27001, SOC 2, GDPR, HIPAA, the EU AI Act, NIST AI RMF and WCAG. They live in their own repo and are not included here. Install them from there.",
+      "category": "research conduct",
+      "license": "MIT",
+      "author": { "name": "Hemant Naik", "url": "https://github.com/Sushegaad" },
+      "url": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+    }
+  ]
+}
