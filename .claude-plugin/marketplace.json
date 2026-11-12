@@ -12,7 +12,7 @@
   "plugins": [
     {
       "name": "ethical-skills",
-      "description": "All six skills in one plugin.",
+      "description": "All seven skills in one plugin.",
       "version": "1.0.0",
       "source": "./",
       "strict": false,
@@ -24,6 +24,7 @@
         "./skills/code-of-ethics",
         "./skills/no-generated-art",
         "./skills/wrap-up-timer",
+        "./skills/carbon-water-footprint",
         "./skills/sarc-check",
         "./skills/no-ai-slop"
       ]
@@ -75,6 +76,18 @@
       "author": { "name": "Ella Agnes Puerto", "url": "https://github.com/eagnespuerto" },
       "keywords": ["timer", "time-boxing", "healthy limits"],
       "skills": ["./skills/wrap-up-timer"]
+    },
+    {
+      "name": "carbon-water-footprint",
+      "description": "Estimates the carbon and water footprint of a session from its real token counts. Shows a small marker that goes from green to yellow to red for carbon and from one to three drops for water, with a Greenpeace donation link.",
+      "version": "1.0.0",
+      "source": "./",
+      "strict": false,
+      "category": "environment",
+      "license": "MIT",
+      "author": { "name": "Ella Agnes Puerto", "url": "https://github.com/eagnespuerto" },
+      "keywords": ["carbon", "water", "energy", "footprint", "sustainability"],
+      "skills": ["./skills/carbon-water-footprint"]
     },
     {
       "name": "sarc-check",
