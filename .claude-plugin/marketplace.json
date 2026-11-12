@@ -1,0 +1,105 @@
+{
+  "name": "ethical-skills",
+  "owner": {
+    "name": "Ella Agnes Puerto",
+    "url": "https://github.com/eagnespuerto"
+  },
+  "metadata": {
+    "description": "Agent skills that make an AI assistant a better guest on the web, a more careful engineer, and a kinder collaborator.",
+    "version": "1.0.0",
+    "homepage": "https://eagnespuerto.github.io/ethical-skills-marketplace/"
+  },
+  "plugins": [
+    {
+      "name": "ethical-skills",
+      "description": "All six skills in one plugin.",
+      "version": "1.0.0",
+      "source": "./",
+      "strict": false,
+      "category": "bundle",
+      "license": "MIT",
+      "author": { "name": "Ella Agnes Puerto", "url": "https://github.com/eagnespuerto" },
+      "skills": [
+        "./skills/fetch-rules",
+        "./skills/code-of-ethics",
+        "./skills/no-generated-art",
+        "./skills/wrap-up-timer",
+        "./skills/sarc-check",
+        "./skills/no-ai-slop"
+      ]
+    },
+    {
+      "name": "fetch-rules",
+      "description": "House rules for pulling data from other people's servers: read robots.txt, send an honest User-Agent, back off on 429 and 503, never work around a 403, and stay under 3 GB per source per night.",
+      "version": "1.0.0",
+      "source": "./",
+      "strict": false,
+      "category": "web etiquette",
+      "license": "MIT",
+      "author": { "name": "Ella Agnes Puerto", "url": "https://github.com/eagnespuerto" },
+      "keywords": ["scraping", "robots.txt", "rate limiting", "archives"],
+      "skills": ["./skills/fetch-rules"]
+    },
+    {
+      "name": "code-of-ethics",
+      "description": "Applies the ACM Code of Ethics to computing work. Flags concrete issues in one or two sentences, cites the principle number, and suggests a fix. Also audits a design or answers questions about the Code.",
+      "version": "1.0.0",
+      "source": "./",
+      "strict": false,
+      "category": "engineering ethics",
+      "license": "MIT",
+      "author": { "name": "Ella Agnes Puerto", "url": "https://github.com/eagnespuerto" },
+      "keywords": ["ACM", "privacy", "fairness", "review"],
+      "skills": ["./skills/code-of-ethics"]
+    },
+    {
+      "name": "no-generated-art",
+      "description": "When a task needs names, icons, photos or art, the assistant searches open libraries made by people and does not generate anything.",
+      "version": "1.0.0",
+      "source": "./",
+      "strict": false,
+      "category": "creative work",
+      "license": "MIT",
+      "author": { "name": "Ella Agnes Puerto", "url": "https://github.com/eagnespuerto" },
+      "keywords": ["icons", "art", "open source", "attribution"],
+      "skills": ["./skills/no-generated-art"]
+    },
+    {
+      "name": "wrap-up-timer",
+      "description": "Reads the real clock during a coding session and tells you to wrap up after a set stretch (50 minutes by default), then again at a daily cap (90 minutes).",
+      "version": "1.0.0",
+      "source": "./",
+      "strict": false,
+      "category": "wellbeing",
+      "license": "MIT",
+      "author": { "name": "Ella Agnes Puerto", "url": "https://github.com/eagnespuerto" },
+      "keywords": ["timer", "time-boxing", "healthy limits"],
+      "skills": ["./skills/wrap-up-timer"]
+    },
+    {
+      "name": "sarc-check",
+      "description": "Before you send archival astrometry to the Minor Planet Center, checks which station codes belong to an archive on the SARC list and names the committee member to contact first.",
+      "version": "1.0.0",
+      "source": "./",
+      "strict": false,
+      "category": "research conduct",
+      "license": "MIT",
+      "author": { "name": "Ella Agnes Puerto", "url": "https://github.com/eagnespuerto" },
+      "keywords": ["astronomy", "MPC", "astrometry", "precovery"],
+      "skills": ["./skills/sarc-check"]
+    },
+    {
+      "name": "no-ai-slop",
+      "description": "Edits a draft into sharper, more human writing while keeping the writer's voice, or lists the AI patterns in it without rewriting. By Peter Yang, included unchanged under the MIT License.",
+      "version": "1.0.0",
+      "source": "./",
+      "strict": false,
+      "category": "honest writing",
+      "license": "MIT",
+      "author": { "name": "Peter Yang", "url": "https://github.com/petergyang" },
+      "homepage": "https://github.com/petergyang/no-ai-slop",
+      "keywords": ["writing", "editing", "voice"],
+      "skills": ["./skills/no-ai-slop"]
+    }
+  ]
+}

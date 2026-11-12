@@ -1,0 +1,87 @@
+:root {
+  --bg: #f7f5ef;
+  --card: #fffdf8;
+  --ink: #1d2a26;
+  --muted: #5b6963;
+  --line: #d9d4c5;
+  --accent: #1f6f54;
+  --accent-ink: #ffffff;
+  --code: #ece8dc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141a18;
+    --card: #1b2320;
+    --ink: #e8ece8;
+    --muted: #9aa8a1;
+    --line: #2e3a35;
+    --accent: #6fcfa8;
+    --accent-ink: #0d1512;
+    --code: #232d29;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.6 Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+}
+header, main, footer {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+header { padding-top: 72px; padding-bottom: 24px; }
+h1, h2, h3, .tag, .button, .meta, .actions, footer {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+h1 { font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.1; margin: 0 0 16px; letter-spacing: -0.02em; }
+h2 { font-size: 1.4rem; margin: 56px 0 16px; padding-top: 24px; border-top: 1px solid var(--line); }
+h3 { font-size: 1.1rem; margin: 0 0 8px; }
+p { margin: 0 0 12px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.lede { font-size: 1.2rem; max-width: 40em; color: var(--muted); }
+.tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 20px; font-size: 0.95rem; }
+.button {
+  display: inline-block;
+  padding: 9px 16px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.button span { font-weight: 400; opacity: 0.75; margin-left: 6px; }
+.button:hover, .button.primary { background: var(--accent); color: var(--accent-ink); }
+.button.primary { padding: 12px 20px; }
+.button.primary:hover { filter: brightness(1.1); }
+
+.ways, .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.ways > div, .card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 0;
+}
+.card { display: flex; flex-direction: column; }
+.card .meta { font-size: 0.85rem; color: var(--muted); }
+.card .actions { margin-top: auto; padding-top: 8px; }
+.card pre { margin-bottom: 0; }
+.note { margin-top: 20px; color: var(--muted); max-width: 46em; }
+
+code { font: 0.85em/1.5 ui-monospace, "Cascadia Mono", Consolas, monospace; background: var(--code); padding: 1px 5px; border-radius: 4px; }
+pre { background: var(--code); padding: 12px 14px; border-radius: 8px; overflow-x: auto; margin: 12px 0; }
+pre code { background: none; padding: 0; }
+
+footer { padding-top: 40px; padding-bottom: 56px; font-size: 0.9rem; color: var(--muted); }
