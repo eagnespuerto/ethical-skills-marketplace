@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ethical Skills Marketplace</title>
+  <meta name="description" content="Free agent skills for polite web fetching, the ACM Code of Ethics, human-made art, healthy session limits, research etiquette and honest writing. Download as zip or install in Claude Code.">
+  <meta property="og:title" content="Ethical Skills Marketplace">
+  <meta property="og:description" content="{{COUNT}} free agent skills for Claude. Download as zip or install as a plugin.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <p class="tag">Version {{VERSION}} · MIT</p>
+    <h1>Ethical Skills Marketplace</h1>
+    <p class="lede">{{COUNT}} agent skills that teach an AI assistant some manners. They cover polite web fetching, the ACM Code of Ethics, human-made art, healthy session limits, research etiquette and honest writing.</p>
+    <p class="actions">
+      <a class="button primary" href="downloads/ethical-skills-all.zip" download>Download all skills <span>{{ALL_SIZE}}</span></a>
+      <a href="{{REPO_URL}}">View on GitHub</a>
+    </p>
+  </header>
+
+  <main>
+    <section id="install">
+      <h2>Install</h2>
+      <div class="ways">
+        <div>
+          <h3>Claude Code</h3>
+          <p>Add the marketplace once, then install the bundle or a single skill.</p>
+          <pre><code>/plugin marketplace add {{REPO}}
+/plugin install ethical-skills@{{MARKETPLACE}}</code></pre>
+        </div>
+        <div>
+          <h3>Claude apps</h3>
+          <p>Download the zip of one skill below. In Claude, open Settings, find Skills, and upload the zip.</p>
+        </div>
+        <div>
+          <h3>By hand</h3>
+          <p>Unzip into your skills folder. Each skill is one folder with a <code>SKILL.md</code> inside.</p>
+          <pre><code>unzip ethical-skills-all.zip -d ~/.claude/skills/</code></pre>
+        </div>
+      </div>
+      <p class="note">After you install <code>fetch-rules</code>, open its <code>SKILL.md</code> and put your own name and contact address in the User-Agent line. Server admins use it to reach you.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid">{{CARDS}}
+      </div>
+    </section>
+
+    <section id="credits">
+      <h2>Credits</h2>
+      <p><code>no-ai-slop</code> is by <a href="https://github.com/petergyang/no-ai-slop">Peter Yang</a> and is included unchanged under the MIT License. The other skills are by <a href="https://github.com/eagnespuerto">Ella Agnes Puerto</a>, also MIT.</p>
+      <p><code>code-of-ethics</code> carries a paraphrased summary of the <a href="https://www.acm.org/code-of-ethics">ACM Code of Ethics and Professional Conduct</a>. The ACM holds the copyright on the Code and does not endorse this project.</p>
+      <p>This page has no generated art, no trackers and no scripts. Checksums for every zip are in <a href="downloads/SHA256SUMS">SHA256SUMS</a>, and the catalogue is also at <a href="skills.json">skills.json</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="{{REPO_URL}}/releases">Releases</a> · <a href="{{REPO_URL}}/blob/main/CONTRIBUTING.md">Add a skill</a> · <a href="{{REPO_URL}}/issues">Report a problem</a></p>
+  </footer>
+</body>
+</html>
