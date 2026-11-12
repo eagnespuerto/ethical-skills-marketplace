@@ -37,7 +37,7 @@ If the script prints `{"error": ...}`, say the transcript was not found and offe
 
 ### Example: a real heavy session
 
-A day-long archive search for precovery images of the asteroid 2026 ED138 (28 October 2026) made 197 requests. The script reports:
+A day-long archive search for precovery images of the asteroid 2026 ED138 (28 October 2026) made 197 requests. The session is titled "2026 ED 138 on Chandra Sky Survey". I meant Catalina. Chandra is an X-ray telescope and has never surveyed an asteroid for me. The typo cost no extra tokens. The script reports:
 
 | Tokens | Count | Energy |
 |---|---|---|
