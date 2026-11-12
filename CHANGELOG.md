@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- New skill `carbon-water-footprint`: a carbon and water marker for the session, with a Greenpeace donation link.
+
 ## 1.0.0 (2026-11-12)
 
 First release, with six skills:

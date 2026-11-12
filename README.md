@@ -4,11 +4,11 @@
 [![License: MIT](https://img.shields.io/github/license/eagnespuerto/ethical-skills-marketplace)](LICENSE)
 [![Deploy site](https://github.com/eagnespuerto/ethical-skills-marketplace/actions/workflows/pages.yml/badge.svg)](https://github.com/eagnespuerto/ethical-skills-marketplace/actions/workflows/pages.yml)
 [![Site](https://img.shields.io/website?url=https%3A%2F%2Feagnespuerto.github.io%2Fethical-skills-marketplace%2F&label=site)](https://eagnespuerto.github.io/ethical-skills-marketplace/)
-[![Skills](https://img.shields.io/badge/skills-6-1f6f54)](#the-skills)
+[![Skills](https://img.shields.io/badge/skills-7-1f6f54)](#the-skills)
 [![Claude Code plugin marketplace](https://img.shields.io/badge/Claude%20Code-plugin%20marketplace-d97757)](#claude-code)
 [![Downloads](https://img.shields.io/github/downloads/eagnespuerto/ethical-skills-marketplace/total)](https://github.com/eagnespuerto/ethical-skills-marketplace/releases)
 
-Six agent skills that teach an AI assistant some manners. I wrote five of them for my own work with Claude. The sixth is Peter Yang's `no-ai-slop`, included with credit.
+Seven agent skills that teach an AI assistant some manners. I wrote six of them for my own work with Claude. The seventh is Peter Yang's `no-ai-slop`, included with credit.
 
 **Download site: https://eagnespuerto.github.io/ethical-skills-marketplace/**
 
@@ -20,6 +20,7 @@ Six agent skills that teach an AI assistant some manners. I wrote five of them f
 | [`code-of-ethics`](skills/code-of-ethics) | Applies the ACM Code of Ethics to computing work. Each flag is one or two sentences with the principle number and a fix. It can also audit a design or answer questions about the Code. | Ella Agnes Puerto |
 | [`no-generated-art`](skills/no-generated-art) | When a task needs names, icons, photos or art, the assistant searches open libraries made by people and generates nothing. | Ella Agnes Puerto |
 | [`wrap-up-timer`](skills/wrap-up-timer) | Reads the real clock during a coding session. It tells you to wrap up after 50 minutes and again at a 90-minute daily cap. You can change both numbers. | Ella Agnes Puerto |
+| [`carbon-water-footprint`](skills/carbon-water-footprint) | Estimates the carbon and water footprint of a session from its real token counts. A small marker goes from green to yellow to red for carbon and from one to three drops for water. At red it shares a Greenpeace donation link. The numbers are estimates, and you can change every factor. | Ella Agnes Puerto |
 | [`sarc-check`](skills/sarc-check) | For astronomers. Before you send archival astrometry to the Minor Planet Center, it checks which station codes are on the SARC list and names the committee member to contact first. | Ella Agnes Puerto |
 | [`no-ai-slop`](skills/no-ai-slop) | Edits a draft into sharper writing that still sounds like you, or lists the AI patterns in it without rewriting. | [Peter Yang](https://github.com/petergyang/no-ai-slop) |
 
