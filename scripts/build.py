@@ -55,9 +55,13 @@ def check_skill(skill_dir: Path, plugin: dict) -> list[str]:
     if not meta.get("description"):
         problems.append(f"{name}: SKILL.md has no description")
 
-    # TODO(human): the marketplace's own policy checks go here. The lines above only
-    # check that the skill is well formed. Append a message to `problems` for anything
-    # a skill must have before it is listed (see CONTRIBUTING.md).
+    if not plugin.get("license"):
+        problems.append(f"{name}: marketplace entry has no license")
+    author = plugin.get("author", {}).get("name")
+    if not author:
+        problems.append(f"{name}: marketplace entry has no author name or username")
+    elif author != "Ella Agnes Puerto" and not (skill_dir / "LICENSE").is_file():
+        problems.append(f"{name}: third-party skill has no LICENSE file in its folder")
 
     return problems
 
