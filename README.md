@@ -24,6 +24,14 @@ Seven agent skills that teach an AI assistant some manners. I wrote six of them 
 | [`sarc-check`](skills/sarc-check) | For astronomers. Before you send archival astrometry to the Minor Planet Center, it checks which station codes are on the SARC list and names the committee member to contact first. | Ella Agnes Puerto |
 | [`no-ai-slop`](skills/no-ai-slop) | Edits a draft into sharper writing that still sounds like you, or lists the AI patterns in it without rewriting. | [Peter Yang](https://github.com/petergyang/no-ai-slop) |
 
+### Linked skills
+
+These skills live in other repos. I link to them and do not copy them, so install them from their own pages.
+
+| Skills | Category | What they do | Author |
+|---|---|---|---|
+| [Claude Skills for Governance, Risk and Compliance](https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance) | research conduct | Compliance skills for frameworks such as ISO 27001, SOC 2, GDPR, HIPAA, the EU AI Act, NIST AI RMF and WCAG. MIT. | [Hemant Naik](https://github.com/Sushegaad) |
+
 ## Install
 
 ### Claude Code
@@ -69,7 +77,7 @@ npm install @eagnespuerto/ethical-skills-marketplace --registry=https://npm.pkg.
 
 ## How the repo works
 
-`.claude-plugin/marketplace.json` is the catalogue. `scripts/build.py` reads it, checks every skill, zips each one, and writes the site into `dist/`. It needs Python 3.9 or later and no packages.
+`.claude-plugin/marketplace.json` is the catalogue. `links.json` lists skills in other repos that the site links to. `scripts/build.py` reads both, checks every skill, zips each one, and writes the site into `dist/`. It needs Python 3.9 or later and no packages.
 
 ```bash
 python scripts/build.py
