@@ -1,7 +1,7 @@
 {
   "name": "@eagnespuerto/ethical-skills-marketplace",
-  "version": "1.0.0",
-  "description": "Agent skills for polite web fetching, the ACM Code of Ethics, human-made art, healthy session limits, research etiquette and honest writing.",
+  "version": "1.1.0",
+  "description": "Agent skills for polite web fetching, the ACM Code of Ethics, human-made art, healthy session limits, research etiquette, footprint tracking, checked facts and honest writing.",
   "keywords": ["claude", "claude-code", "agent-skills", "claude-skills", "ethics", "plugin-marketplace"],
   "homepage": "https://eagnespuerto.github.io/ethical-skills-marketplace/",
   "repository": {
