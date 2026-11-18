@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- New skill `stop-guessing`: search the code or the web before using an unchecked value.
 - New skill `carbon-water-footprint`: a carbon and water marker for the session, with a Greenpeace donation link.
 - New `links.json` for skills kept in other repos. The first link is Hemant Naik's Governance, Risk and Compliance skills, under research conduct.
 

@@ -12,7 +12,7 @@
   "plugins": [
     {
       "name": "ethical-skills",
-      "description": "All seven skills in one plugin.",
+      "description": "All eight skills in one plugin.",
       "version": "1.0.0",
       "source": "./",
       "strict": false,
@@ -25,6 +25,7 @@
         "./skills/no-generated-art",
         "./skills/wrap-up-timer",
         "./skills/carbon-water-footprint",
+        "./skills/stop-guessing",
         "./skills/sarc-check",
         "./skills/no-ai-slop"
       ]
@@ -88,6 +89,18 @@
       "author": { "name": "Ella Agnes Puerto", "url": "https://github.com/eagnespuerto" },
       "keywords": ["carbon", "water", "energy", "footprint", "sustainability"],
       "skills": ["./skills/carbon-water-footprint"]
+    },
+    {
+      "name": "stop-guessing",
+      "description": "Before using a value it has not checked (a version, flag, path, API field, date or ID), the assistant searches the code, the docs or the web first, and says so plainly when it still cannot confirm.",
+      "version": "1.0.0",
+      "source": "./",
+      "strict": false,
+      "category": "honest writing",
+      "license": "MIT",
+      "author": { "name": "Ella Agnes Puerto", "url": "https://github.com/eagnespuerto" },
+      "keywords": ["accuracy", "hallucination", "verification", "search"],
+      "skills": ["./skills/stop-guessing"]
     },
     {
       "name": "sarc-check",
