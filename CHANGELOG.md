@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.1.0 (2026-11-18)
 
 - New skill `stop-guessing`: search the code or the web before using an unchecked value.
 - New skill `carbon-water-footprint`: a carbon and water marker for the session, with a Greenpeace donation link.
